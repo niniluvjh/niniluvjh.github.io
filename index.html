@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A bilingual animated personal e-card website for Elian Lin.">
+  <title>Elian Lin | Digital Card</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="auraCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Back to top">
+      <span class="brand-mark">EL</span>
+      <span data-i18n="brand">林以安</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about" data-i18n="navAbout">關於</a>
+      <a href="#story" data-i18n="navStory">事蹟</a>
+      <a href="#work" data-i18n="navWork">作品</a>
+      <a href="#contact" data-i18n="navContact">聯絡</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-button" id="langToggle" type="button" aria-label="Switch language">
+        <span class="button-text">EN</span>
+      </button>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span class="sun"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" data-i18n="heroEyebrow">數位產品設計師 / 創意工程師</p>
+        <h1 class="reveal">
+          <span data-i18n="heroName">林以安</span>
+          <span class="name-accent">Elian Lin</span>
+        </h1>
+        <p class="hero-lead reveal" data-i18n="heroLead">我把資料、介面與故事感揉合成清澈又有速度的產品體驗。</p>
+        <div class="hero-tags reveal" aria-label="Interests">
+          <span data-i18n="tag1">人機互動</span>
+          <span data-i18n="tag2">生成式藝術</span>
+          <span data-i18n="tag3">城市攝影</span>
+          <span data-i18n="tag4">咖啡實驗</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-label="Animated portrait card">
+        <div class="profile-orbit">
+          <div class="portrait">
+            <div class="portrait-glow"></div>
+            <div class="portrait-face">
+              <span class="portrait-initials">EL</span>
+            </div>
+          </div>
+          <span class="orbital-chip chip-a">UX</span>
+          <span class="orbital-chip chip-b">AI</span>
+          <span class="orbital-chip chip-c">JS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section" aria-label="Profile highlights">
+      <div class="stat-ticker">
+        <div class="stat-item"><strong data-count="42">0</strong><span data-i18n="stat1">跨域專案</span></div>
+        <div class="stat-item"><strong data-count="8">0</strong><span data-i18n="stat2">設計獎項入選</span></div>
+        <div class="stat-item"><strong data-count="120">0</strong><span data-i18n="stat3">工作坊參與者</span></div>
+        <div class="stat-item"><strong data-count="16">0</strong><span data-i18n="stat4">公開演講</span></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+        <h2 data-i18n="aboutTitle">關於我</h2>
+      </div>
+      <div class="about-grid">
+        <article class="glass-panel reveal">
+          <h3 data-i18n="aboutCard1Title">清晰的複雜度</h3>
+          <p data-i18n="aboutCard1Text">曾在未來金融、智慧零售與文化科技團隊擔任產品設計顧問，擅長把模糊問題拆成可被使用者感受到的節奏。</p>
+        </article>
+        <article class="glass-panel reveal">
+          <h3 data-i18n="aboutCard2Title">會寫程式的設計腦</h3>
+          <p data-i18n="aboutCard2Text">使用原型、前端動畫與資料視覺化快速驗證想法，讓團隊在討論時看見可互動的答案。</p>
+        </article>
+        <article class="glass-panel reveal">
+          <h3 data-i18n="aboutCard3Title">偏好的工作方式</h3>
+          <p data-i18n="aboutCard3Text">喜歡小步快跑、漂亮的系統化命名、安靜但有力量的介面，以及能讓人願意多停留一秒的細節。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="storyEyebrow">Milestones</p>
+        <h2 data-i18n="storyTitle">虛構事蹟</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><time>2026</time><div><h3 data-i18n="m1Title">策展「液態介面」互動展</h3><p data-i18n="m1Text">用即時感測資料驅動沉浸式牆面，讓觀眾用步伐生成 Tiffany Blue 的光流。</p></div></article>
+        <article class="timeline-item reveal"><time>2025</time><div><h3 data-i18n="m2Title">打造 Aurora CRM 原型</h3><p data-i18n="m2Text">把銷售洞察、任務排序與客戶情緒訊號整合成單頁式工作台。</p></div></article>
+        <article class="timeline-item reveal"><time>2024</time><div><h3 data-i18n="m3Title">入選亞洲數位設計新星</h3><p data-i18n="m3Text">以「慢速通知」概念重新思考使用者注意力，獲評審特別提名。</p></div></article>
+        <article class="timeline-item reveal"><time>2023</time><div><h3 data-i18n="m4Title">發起周末創意實驗室</h3><p data-i18n="m4Text">每月聚集設計師、工程師與創作者，將奇怪想法做成能玩的原型。</p></div></article>
+      </div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="workEyebrow">Selected Work</p>
+        <h2 data-i18n="workTitle">更多資料與作品</h2>
+      </div>
+      <div class="work-grid">
+        <article class="work-card reveal"><span class="work-number">01</span><h3 data-i18n="w1Title">Nebula Notes</h3><p data-i18n="w1Text">為研究者設計的 AI 筆記系統，支援脈絡搜尋與自動摘要。</p></article>
+        <article class="work-card reveal"><span class="work-number">02</span><h3 data-i18n="w2Title">Mint Transit</h3><p data-i18n="w2Text">城市通勤者的微互動儀表板，提供路線、天氣與心情記錄。</p></article>
+        <article class="work-card reveal"><span class="work-number">03</span><h3 data-i18n="w3Title">Echo Table</h3><p data-i18n="w3Text">把會議語音變成決策地圖，協助團隊追蹤共識與分歧。</p></article>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-panel reveal">
+        <div>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">一起把想法做得更亮。</h2>
+          <p data-i18n="contactText">歡迎聊產品設計、前端動畫、AI 原型、展覽互動或一杯很認真的拿鐵。</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:elian.lin@example.com">elian.lin@example.com</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://line.me/" target="_blank" rel="noreferrer">LINE</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
